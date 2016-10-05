@@ -14,20 +14,25 @@ $ npm -g install eslint-scanner
 ## Usage
 
 ### Simple
-create .eslintrc in yourpath  
-and then:
+default eslint rules: airbnb.
+default result file path: ./report.html
 ```sh
-$ yourpath: escheck -f ./src -c .eslintrc
+$ yourpath: escheck -f
 ```
 
 Then you can see the result file(report.html) under yourpath.
 
-### Set the output
+### Set output path
 ```sh
 $ yourpath: escheck -f ./src -o ./report.html
 ```
+### Set eslint-config
+create .eslintrc in yourpath  
+and then:
+```sh
+$ yourpath: escheck -f ./src -c ./yourpath/.eslintrc
+```
 
----
 
 ## Help 
 ```sh

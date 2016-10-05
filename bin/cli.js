@@ -7,6 +7,8 @@ const version = require('../package.json').version;
 const eslint = require("eslint");
 const render = require('../src/render');
 const output = require('../src/output');
+const nodePath = require('path');
+const fs = require('fs');
 
 program
     .version(version)
@@ -29,10 +31,23 @@ if (!program.color) {
     process.env.DEBUG_COLORS = false;
 }
 
+const isFileExsit = (path) => {
+    try {
+        fs.statSync(path);
+        return true;
+    }
+    catch(err) {
+        return false;
+    }
+};
 
 new Promise((/* resolve, reject */) => {
     const path = program.path || './app/biz/';
-    const eslintConfig = program.config || './app/biz/.eslintrc';
+    let eslintConfig = program.config || './app/biz/.eslintrc';
+    if(!isFileExsit(eslintConfig)) {
+        eslintConfig = nodePath.resolve(require.main.filename, '../../.eslintrc');
+    }
+
     const outputPath = program.output || './report.html';
     // eslint
     const CLIEngine = eslint.CLIEngine;
