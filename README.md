@@ -14,8 +14,10 @@ $ npm -g install eslint-scanner
 ## Usage
 
 ### Simple
+create .eslintrc in yourpath  
+and then:
 ```sh
-$ yourpath: escheck -f ./src
+$ yourpath: escheck -f ./src -c .eslintrc
 ```
 
 Then you can see the result file(report.html) under yourpath.
@@ -25,12 +27,21 @@ Then you can see the result file(report.html) under yourpath.
 $ yourpath: escheck -f ./src -o ./report.html
 ```
 
-### Set the eslint rules  
-  
-create .eslintrc in yourpath  
-and then:
+---
+
+## Help 
 ```sh
-$ yourpath: escheck -f ./src -c ./eslintrc
+$: escheck --help  
+
+  Usage: escheck [options] <src...>  
+
+  Options:  
+
+    -h, --help           output usage information  
+    -V, --version        output the version number  
+    -f, --path <path>    base directory for resolving paths  
+    -c, --config <path>  .eslintrc path  
+    -o, --output <path>  path for report html
 ```
 
 # License
