@@ -34,6 +34,21 @@ class Render {
         output.success('create file ' + path);
     }
     dataFormat(data) {
+        data.results.forEach((item) => {
+            let messages = [];
+            item.messages.forEach((msg) => {
+                if(!/import|(linebreak\-style)/.test(msg.ruleId)) {
+                    messages.push(msg);
+                } else {
+                    if(msg.severity === 1) {
+                        item.warningCount -= 1;
+                    } else {
+                        item.errorCount -= 1;
+                    }
+                }
+            });
+            item.messages = messages;
+        });
         data.results.sort((a, b) => b.errorCount - a.errorCount);
     }
     getTemplateStr() {

@@ -53,7 +53,6 @@ new Promise((/* resolve, reject */) => {
     const CLIEngine = eslint.CLIEngine;
     const cli = new CLIEngine({
         envs: ['browser', 'mocha'],
-        fix: true,
         configFile: eslintConfig
     });
     const report = cli.executeOnFiles([path]);
