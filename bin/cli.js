@@ -43,7 +43,7 @@ const isFileExsit = (path) => {
 
 new Promise((/* resolve, reject */) => {
     const path = program.path || './app/biz/';
-    let eslintConfig = program.config || './app/biz/.eslintrc';
+    let eslintConfig = program.config || './.eslintrc';
     if(!isFileExsit(eslintConfig)) {
         eslintConfig = nodePath.resolve(require.main.filename, '../../.eslintrc');
     }
