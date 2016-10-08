@@ -14,7 +14,7 @@ $ npm -g install eslint-scanner
 ## Usage
 
 ### Simple
-default eslint rules: airbnb.  
+default eslint path: yourpath/.eslintrc(if it's not exsit, use airbnb).  
 default result file path: ./report.html  
 ```sh
 $ yourpath: escheck -f ./src
@@ -27,10 +27,10 @@ Then you can see the result file(report.html) under yourpath.
 $ yourpath: escheck -f ./src -o ./report.html
 ```
 ### Set eslint-config
-create .eslintrc in yourpath  
+create .eslintrc in xxx/ 
 and then:
 ```sh
-$ yourpath: escheck -f ./src -c ./yourpath/.eslintrc
+$ yourpath: escheck -f ./src -c ./xxx/.eslintrc
 ```
 
 
