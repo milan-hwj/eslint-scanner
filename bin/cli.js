@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-'use strict';
 
 const process = require('process');
 const program = require('commander');

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-'use strict';
 
 /**
  * @author   milan(white gourd angel)
